@@ -14,4 +14,6 @@ headers = {
 
 response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
 
-print(response.text)
+print(response.json())
+data = response.json()[0]["faceAttributes"]["age"]
+print(f'The character seems to be {data} years old.')
